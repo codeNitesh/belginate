@@ -1,0 +1,20 @@
+/* .parent{
+    display: flex; // d-flex
+    justify-content: space-between; // justify-content-between
+} */
+
+.group-12{
+    height: 67px;
+    width: 678px;
+}
+
+.main-content{
+    margin: 50px;
+}
+.aaa{
+    height: 42px !important;
+    width: 256px !important;
+    border-radius: 2px;
+    background-color: #FFF;
+    /* padding: 20px; */
+}

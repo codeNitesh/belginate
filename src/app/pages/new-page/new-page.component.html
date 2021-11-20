@@ -1,0 +1,60 @@
+<app-navbar></app-navbar>
+
+<div class="main-content">
+    <div class="group-12">
+        <mat-form-field class="list-select"  appearance="outline">
+            <mat-label>List</mat-label>
+            <mat-select [(ngModel)]="toppingSelected">
+                <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          
+          <mat-form-field class="aaa" appearance="outline">
+            <mat-label>City</mat-label>
+            <input [(ngModel)]="city" matInput placeholder="Ex. San Francisco">
+          </mat-form-field>
+    </div>
+    <div class="group-13">
+        <button>hey</button>
+    </div>
+    
+    <p *ngIf="userDetails">
+        {{userDetails.title}}
+    </p>
+
+    <mat-card>
+        <mat-checkbox (click)="selectAllExp()" [(ngModel)]="isAllSelected" [color]="'warn'" (click)="$event.stopPropagation()">Checked</mat-checkbox>
+    </mat-card>
+        <mat-expansion-panel *ngFor="let item of data.mainData">
+            <mat-expansion-panel-header>  
+              <mat-panel-title>
+                <mat-checkbox [(ngModel)]="item.isSelected" [color]="'warn'" (click)="$event.stopPropagation()">Checked</mat-checkbox>
+                Personal data
+              </mat-panel-title>
+              <mat-panel-description>
+                Type your name and age
+                <mat-icon>account_circle</mat-icon>
+                <mat-slide-toggle
+                [color]="'warn'"
+                [checked]="true"
+                [disabled]="false"
+                (click)="$event.stopPropagation()"
+                >
+                    Slide me!
+                </mat-slide-toggle>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+        
+            <mat-form-field>
+              <mat-label>First name</mat-label>
+              <input matInput>
+            </mat-form-field>
+        
+            <mat-form-field>
+              <mat-label>Age</mat-label>
+              <input matInput type="number" min="1">
+            </mat-form-field>
+        
+        </mat-expansion-panel>
+    
+</div>
